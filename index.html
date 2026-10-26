@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="English VClass — Cambridge Speaking Practice A2-B2">
+<title>English VClass • Cambridge Speaking • A2–B2 Structure Practice</title>
+<style>
+:root{
+  --primary:#123c69;
+  --secondary:#1f7a8c;
+  --accent:#f4b942;
+  --light:#f4f7fb;
+  --dark:#17202a;
+  --muted:#667085;
+  --green:#16803c;
+  --green-bg:#eaf7ee;
+  --red:#c62828;
+  --red-bg:#fdecec;
+  --white:#fff;
+  --shadow:0 8px 24px rgba(18,60,105,.10);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.6;
+}
+header{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  padding:28px 16px 34px;
+}
+.header-inner{max-width:980px;margin:auto}
+.brand{font-weight:800;letter-spacing:.5px;font-size:1.05rem}
+header h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.15;margin:12px 0 8px}
+header p{margin:0;opacity:.95;font-size:1rem}
+.progress-wrap{margin-top:22px;background:rgba(255,255,255,.2);border-radius:99px;height:10px;overflow:hidden}
+.progress{width:10%;height:100%;background:var(--accent);border-radius:99px;transition:width .5s ease}
+nav{
+  position:sticky;top:0;z-index:20;
+  background:white;border-bottom:1px solid #e5e7eb;
+  overflow-x:auto;white-space:nowrap;
+}
+nav .nav-inner{max-width:980px;margin:auto;display:flex}
+nav a{
+  display:inline-block;padding:12px 14px;color:var(--primary);
+  text-decoration:none;font-weight:700;font-size:.9rem;
+}
+nav a.done::after{content:" ✓";color:var(--green);font-weight:800}
+main{max-width:980px;margin:auto;padding:20px 14px 50px}
+.card{
+  background:white;border-radius:var(--radius);padding:22px;
+  margin:18px 0;box-shadow:var(--shadow);
+}
+.card h2{color:var(--primary);margin-top:0;font-size:1.45rem}
+.card h3{color:var(--secondary);margin-bottom:8px}
+.badge{
+  display:inline-block;background:#e8f2fb;color:var(--primary);
+  padding:5px 10px;border-radius:999px;font-size:.8rem;font-weight:800;
+}
+.goal-list{padding-left:20px}
+.goal-list li{margin:7px 0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:420px}
+th,td{padding:12px;border-bottom:1px solid #e8ebef;text-align:left}
+th{background:#eef4fa;color:var(--primary)}
+.example{
+  background:#f8fafc;border-left:5px solid var(--secondary);
+  padding:13px 15px;margin:12px 0;border-radius:8px;
+}
+.example-audio{
+  display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;
+}
+.audio-btn{
+  background:#eaf0f6;border:1px solid #d0d9e6;
+  border-radius:30px;padding:4px 12px;font-size:.75rem;
+  font-weight:700;color:var(--primary);cursor:pointer;
+  display:inline-flex;align-items:center;gap:4px;transition:.15s;
+}
+.audio-btn:hover{background:#d0d9e6}
+.audio-btn.playing{background:var(--secondary);color:white;border-color:var(--secondary)}
+.en{font-weight:700;color:var(--primary)}
+.pt{color:var(--muted)}
+.tip{
+  background:#fff8e7;border-left:5px solid var(--accent);
+  padding:14px;border-radius:8px;margin-top:14px;
+}
+.exercise{
+  border:1px solid #e3e8ef;border-radius:14px;padding:16px;margin:14px 0;
+}
+input[type="text"],textarea,select{
+  width:100%;padding:12px;border:1px solid #ccd5df;border-radius:10px;
+  font:inherit;background:white;
+}
+textarea{min-height:110px;resize:vertical}
+button{
+  border:0;border-radius:12px;padding:12px 17px;
+  background:var(--primary);color:white;font-weight:800;
+  cursor:pointer;font-size:1rem;
+}
+button:hover{filter:brightness(1.08)}
+button.secondary{background:var(--secondary)}
+button.light{background:#eaf0f6;color:var(--primary)}
+.feedback{
+  margin-top:10px;padding:11px;border-radius:10px;font-weight:700;display:none;
+}
+.feedback.correct{display:block;background:var(--green-bg);color:var(--green)}
+.feedback.wrong{display:block;background:var(--red-bg);color:var(--red)}
+.option{
+  display:block;width:100%;text-align:left;margin:8px 0;
+  background:#f5f7fa;color:var(--dark);border:1px solid #dce2e9;
+}
+.option.correct{background:var(--green-bg);border-color:#9ed7ae;color:var(--green)}
+.option.wrong{background:var(--red-bg);border-color:#efaaaa;color:var(--red)}
+.option:disabled{cursor:default;opacity:1}
+.score{
+  text-align:center;background:#eef4fa;border-radius:16px;padding:20px;
+  margin-top:20px;
+}
+.score strong{font-size:2.2rem;color:var(--primary)}
+.audio-box{
+  text-align:center;background:#f5f8fb;border-radius:15px;padding:20px;
+}
+#transcript{display:none;margin-top:15px}
+.speaking-card{
+  background:linear-gradient(135deg,#f5f8fb,#ffffff);
+  border:1px solid #e0e7ef;
+}
+footer{
+  text-align:center;margin-top:30px;padding:28px 15px;
+  color:#777;background:white;border-top:1px solid #e5e7eb;
+}
+footer .copyright{font-weight:700}
+.small{font-size:.88rem;color:var(--muted)}
+.hidden{display:none}
+@media(max-width:600px){
+  header{padding-top:23px}
+  .card{padding:18px;margin:14px 0}
+  nav a{padding:11px 12px;font-size:.82rem}
+  button{width:100%;margin-top:5px}
+  .audio-btn{width:auto;margin-top:0}
+}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:18px 0}
+.topic-card{background:#f8fafc;border-radius:14px;padding:16px;border:1px solid #e3e8ef}
+.topic-card h4{margin:0 0 8px;color:var(--primary);font-size:1.1rem}
+.topic-card .q{font-size:.92rem;margin-bottom:8px}
+.topic-card .q strong{color:var(--secondary)}
+.topic-card .answer{font-size:.9rem;color:var(--dark);background:#fff;border-radius:8px;padding:8px 10px;margin-bottom:8px}
+.followup{font-size:.85rem;color:var(--muted);margin-top:6px;border-top:1px dashed #d0d9e6;padding-top:6px}
+.followup em{color:var(--primary);font-style:normal;font-weight:600}
+.speak-feedback{background:#f5f8fb;border-radius:14px;padding:18px;margin-top:16px}
+.speak-feedback h4{margin:0 0 10px;color:var(--secondary)}
+.level-tag{display:inline-block;background:var(--accent);color:var(--dark);font-size:.7rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-right:6px}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">English VClass • Edson D'Aguiar</div>
+    <h1>🗣️ Cambridge Speaking — Part 1 & 2</h1>
+    <p>A2–B2 · Daily Routine · Free Time · Food · Family · Hometown · School</p>
+    <div class="progress-wrap" aria-label="Progresso da aula"><div class="progress" id="globalProgress"></div></div>
+    <p class="small" style="color:white;margin-top:8px"><span id="progressLabel">0</span>% concluído • Curso English Foundations • Módulo Speaking</p>
+  </div>
+</header>
+
+<nav aria-label="Navegação da aula">
+  <div class="nav-inner">
+    <a href="#objetivos" data-section="objetivos">Objetivos</a>
+    <a href="#structure" data-section="structure">Structure</a>
+    <a href="#topics" data-section="topics">Topics</a>
+    <a href="#feedback" data-section="feedback">Feedback</a>
+    <a href="#practice" data-section="practice">Practice</a>
+    <a href="#quiz" data-section="quiz">Quiz</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ========== OBJETIVOS ========== -->
+<section class="card" id="objetivos">
+  <span class="badge">A2–B2 • CAMBRIDGE SPEAKING</span>
+  <h2>🎯 Objetivos da aula</h2>
+  <p>Ao terminar esta aula, você deverá ser capaz de:</p>
+  <ul class="goal-list">
+    <li>Responder perguntas do <strong>Cambridge Speaking Part 1</strong> com frases completas.</li>
+    <li>Usar a estrutura <strong>Sujeito + Verbo + Complemento (S+V+O)</strong> em respostas orais.</li>
+    <li>Expandir respostas curtas em respostas mais naturais e fluidas.</li>
+    <li>Desenvolver respostas no nível <strong>A2</strong> e no nível <strong>B1/B2</strong> para os mesmos tópicos.</li>
+    <li>Praticar tópicos comuns: <strong>Daily Routine, Free Time, Food, Family, Hometown, School</strong>.</li>
+    <li>Falar com mais confiança e fluência usando conectores e exemplos.</li>
+  </ul>
+</section>
+
+<!-- ========== STRUCTURE ========== -->
+<section class="card" id="structure">
+  <h2>📘 1. Cambridge Speaking Structure</h2>
+  <p>O examinador faz uma pergunta simples. Sua resposta deve ser <strong>natural, completa e fluida</strong> — não apenas uma palavra. A base é a estrutura <strong>S + V + O</strong> (Sujeito + Verbo + Complemento), mas em níveis mais altos você pode adicionar <strong>exemplos, razões e conectores</strong>.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Nível</th><th>Estrutura</th><th>Exemplo</th><th>Áudio</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="level-tag">A2</span></td>
+          <td>Resposta curta, S+V+O</td>
+          <td>I like pizza and pasta. They are delicious.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I like pizza and pasta. They are delicious." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I like pizza and pasta. They are delicious." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+        <tr>
+          <td><span class="level-tag">B1</span></td>
+          <td>Resposta com exemplos e variedade</td>
+          <td>I enjoy eating healthy food like vegetables and fish. I also like trying new dishes.</td>
+          <td><div class="example-audio">
+            <button class="audio-btn" data-phrase="I enjoy eating healthy food like vegetables and fish. I also like trying new dishes." data-accent="us">🇺🇸 US</button>
+            <button class="audio-btn" data-phrase="I enjoy eating healthy food like vegetables and fish. I also like trying new dishes." data-accent="uk">🇬🇧 UK</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Dica de fluência:</strong> Sempre acrescente <strong>uma razão</strong> ou <strong>um exemplo</strong>. Isso transforma uma resposta de 3 palavras em uma resposta de 15–20 palavras, muito mais natural para o Cambridge.
+  </div>
+
+  <h3 style="margin-top:24px">🔊 Áudio — Modelo completo</h3>
+  <div class="example">
+    <div class="en">Examiner: "Do you like cooking?"<br>Candidate: "Yes, I do. I really enjoy cooking at home because it helps me relax. I usually make simple dishes like pasta or rice with vegetables. On weekends I sometimes try new recipes."</div>
+    <div class="pt">Examinador: "Você gosta de cozinhar?"<br>Candidato: "Sim. Eu gosto muito de cozinhar em casa porque me ajuda a relaxar. Normalmente faço pratos simples como massa ou arroz com legumes. Nos fins de semana às vezes tento receitas novas."</div>
+    <div class="example-audio">
+      <button class="audio-btn" data-phrase="Yes, I do. I really enjoy cooking at home because it helps me relax. I usually make simple dishes like pasta or rice with vegetables. On weekends I sometimes try new recipes." data-accent="us">🇺🇸 US</button>
+      <button class="audio-btn" data-phrase="Yes, I do. I really enjoy cooking at home because it helps me relax. I usually make simple dishes like pasta or rice with vegetables. On weekends I sometimes try new recipes." data-accent="uk">🇬🇧 UK</button>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>📌 Estrutura:</strong> Use <strong>Sujeito + Verbo + Complemento</strong>. Ex: <em>"I like my job."</em> → Depois expanda: <em>"I like my job because it's interesting and I have nice colleagues."</em>
+  </div>
+</section>
+
+<!-- ========== TOPICS ========== -->
+<section class="card" id="topics">
+  <h2>🧠 2. Cambridge Part 1 — Topics & Model Answers</h2>
+  <p>Estes são os tópicos mais comuns do Cambridge Speaking Part 1. Clique nos áudios para ouvir as respostas modelo em US e UK.</p>
+
+  <div class="topic-grid">
+    <!-- Daily Routine -->
+    <div class="topic-card">
+      <h4>⏰ Daily Routine</h4>
+      <div class="q"><strong>Examiner:</strong> What time do you wake up?</div>
+      <div class="answer"><strong>Suggested answer:</strong> At seven.</div>
+      <div class="followup"><em>Follow-up:</em> What do you usually do after waking up?</div>
+      <div class="example-audio" style="margin-top:10px">
+        <button class="audio-btn" data-phrase="I wake up at seven. After that, I brush my teeth, take a shower, and have breakfast. Then I check my messages and start my day." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I wake up at seven. After that, I brush my teeth, take a shower, and have breakfast. Then I check my messages and start my day." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <!-- Free Time -->
+    <div class="topic-card">
+      <h4>🎬 Free Time</h4>
+      <div class="q"><strong>Examiner:</strong> What do you do in your free time?</div>
+      <div class="answer"><strong>Suggested answer:</strong> I watch movies.</div>
+      <div class="followup"><em>Follow-up:</em> What kind of movies do you like?</div>
+      <div class="example-audio" style="margin-top:10px">
+        <button class="audio-btn" data-phrase="In my free time, I usually watch movies or series. I like comedies and action films because they help me relax after work." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="In my free time, I usually watch movies or series. I like comedies and action films because they help me relax after work." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <!-- Food -->
+    <div class="topic-card">
+      <h4>🍕 Food</h4>
+      <div class="q"><strong>Examiner:</strong> Do you like cooking?</div>
+      <div class="answer"><strong>Suggested answer:</strong> Yes, I do.</div>
+      <div class="followup"><em>Follow-up:</em> What is your favourite food?</div>
+      <div class="example-audio" style="margin-top:10px">
+        <button class="audio-btn" data-phrase="Yes, I do. I enjoy cooking at home because it's relaxing. My favourite food is pasta with vegetables. I also like trying new dishes from different countries." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="Yes, I do. I enjoy cooking at home because it's relaxing. My favourite food is pasta with vegetables. I also like trying new dishes from different countries." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <!-- Family -->
+    <div class="topic-card">
+      <h4>👨‍👩‍👧‍👦 Family</h4>
+      <div class="q"><strong>Examiner:</strong> How many people are in your family?</div>
+      <div class="answer"><strong>Suggested answer:</strong> There are four: my parents, my sister and me.</div>
+      <div class="followup"><em>Follow-up:</em> Do you spend a lot of time with your family?</div>
+      <div class="example-audio" style="margin-top:10px">
+        <button class="audio-btn" data-phrase="There are four people in my family: my parents, my sister, and me. We spend a lot of time together, especially on weekends. We usually have lunch together and watch films." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="There are four people in my family: my parents, my sister, and me. We spend a lot of time together, especially on weekends. We usually have lunch together and watch films." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <!-- Hometown -->
+    <div class="topic-card">
+      <h4>🏙️ Hometown</h4>
+      <div class="q"><strong>Examiner:</strong> Where do you live?</div>
+      <div class="answer"><strong>Suggested answer:</strong> I live in a small town near the coast.</div>
+      <div class="followup"><em>Follow-up:</em> What do you like about your town?</div>
+      <div class="example-audio" style="margin-top:10px">
+        <button class="audio-btn" data-phrase="I live in a small town near the coast. I like it because it's quiet and the people are friendly. There are also beautiful beaches and good restaurants." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I live in a small town near the coast. I like it because it's quiet and the people are friendly. There are also beautiful beaches and good restaurants." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <!-- School -->
+    <div class="topic-card">
+      <h4>📚 School</h4>
+      <div class="q"><strong>Examiner:</strong> What is your favourite subject?</div>
+      <div class="answer"><strong>Suggested answer:</strong> I like English because it's interesting.</div>
+      <div class="followup"><em>Follow-up:</em> Do you prefer studying alone or with friends?</div>
+      <div class="example-audio" style="margin-top:10px">
+        <button class="audio-btn" data-phrase="My favourite subject is English because it's interesting and useful for my career. I prefer studying with friends because we can practise together and help each other." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="My favourite subject is English because it's interesting and useful for my career. I prefer studying with friends because we can practise together and help each other." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Dica:</strong> Sempre que possível, adicione <strong>porque / because</strong>, <strong>por exemplo / for example</strong> e <strong>também / also</strong>. Isso mostra fluência e variedade gramatical.
+  </div>
+</section>
+
+<!-- ========== FEEDBACK ========== -->
+<section class="card" id="feedback">
+  <h2>📝 3. Feedback Estruturado (exemplo — Food)</h2>
+  <p>Este é o tipo de feedback que você deve buscar ao praticar. Use como modelo para suas próprias respostas.</p>
+
+  <div class="exercise">
+    <h3>📝 1 palavra</h3>
+    <div class="tip"><strong>💡 Dica:</strong> Tente escrever uma frase completa com pelo menos 6 palavras.</div>
+    <div class="tip"><strong>📌 Estrutura:</strong> Use: Sujeito + Verbo + Complemento. Ex: <em>"I like my job."</em></div>
+
+    <h4 style="margin-top:18px">📚 Exemplos de resposta para esta pergunta (A2/B1):</h4>
+
+    <div style="margin:12px 0;padding:12px;background:#f8fafc;border-radius:12px;border-left:4px solid var(--accent)">
+      <span class="level-tag">A2</span>
+      <div class="en" style="margin-top:6px">English: I like pizza and pasta. They are delicious.</div>
+      <div class="pt">Português: Gosto de pizza e macarrão. São deliciosos.</div>
+      <div class="small" style="margin-top:4px">📖 Resposta com S+V+O.</div>
+      <div class="example-audio" style="margin-top:6px">
+        <button class="audio-btn" data-phrase="I like pizza and pasta. They are delicious." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I like pizza and pasta. They are delicious." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <div style="margin:12px 0;padding:12px;background:#f8fafc;border-radius:12px;border-left:4px solid var(--secondary)">
+      <span class="level-tag">B1</span>
+      <div class="en" style="margin-top:6px">English: I enjoy eating healthy food like vegetables and fish. I also like trying new dishes.</div>
+      <div class="pt">Português: Gosto de comer comida saudável como vegetais e peixe. Também gosto de experimentar pratos novos.</div>
+      <div class="small" style="margin-top:4px">📖 Dá exemplos e mostra variedade.</div>
+      <div class="example-audio" style="margin-top:6px">
+        <button class="audio-btn" data-phrase="I enjoy eating healthy food like vegetables and fish. I also like trying new dishes." data-accent="us">🇺🇸 US</button>
+        <button class="audio-btn" data-phrase="I enjoy eating healthy food like vegetables and fish. I also like trying new dishes." data-accent="uk">🇬🇧 UK</button>
+      </div>
+    </div>
+
+    <div class="tip" style="margin-top:16px">
+      <strong>💡 Palavras úteis para este tópico (food):</strong> pizza, pasta, fruit, vegetables, meat, fish, delicious, healthy, tasty, expensive, homemade
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px">🔁 Feedback — todos os tópicos</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tópico</th><th>Pergunta</th><th>Resposta A2</th><th>Resposta B1</th><th>Áudio B1</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Daily Routine</strong></td>
+          <td>What time do you wake up?</td>
+          <td>At seven. I have breakfast.</td>
+          <td>I usually wake up at seven. After that, I have breakfast and get ready for work.</td>
+          <td><div class="example-audio"><button class="audio-btn" data-phrase="I usually wake up at seven. After that, I have breakfast and get ready for work." data-accent="us">🇺🇸</button><button class="audio-btn" data-phrase="I usually wake up at seven. After that, I have breakfast and get ready for work." data-accent="uk">🇬🇧</button></div></td>
+        </tr>
+        <tr>
+          <td><strong>Free Time</strong></td>
+          <td>What do you do in your free time?</td>
+          <td>I watch movies.</td>
+          <td>In my free time, I enjoy watching films and going for walks. I also like reading books.</td>
+          <td><div class="example-audio"><button class="audio-btn" data-phrase="In my free time, I enjoy watching films and going for walks. I also like reading books." data-accent="us">🇺🇸</button><button class="audio-btn" data-phrase="In my free time, I enjoy watching films and going for walks. I also like reading books." data-accent="uk">🇬🇧</button></div></td>
+        </tr>
+        <tr>
+          <td><strong>Food</strong></td>
+          <td>Do you like cooking?</td>
+          <td>Yes, I do. I cook pasta.</td>
+          <td>Yes, I love cooking. I often make pasta and salads at home because they are quick and healthy.</td>
+          <td><div class="example-audio"><button class="audio-btn" data-phrase="Yes, I love cooking. I often make pasta and salads at home because they are quick and healthy." data-accent="us">🇺🇸</button><button class="audio-btn" data-phrase="Yes, I love cooking. I often make pasta and salads at home because they are quick and healthy." data-accent="uk">🇬🇧</button></div></td>
+        </tr>
+        <tr>
+          <td><strong>Family</strong></td>
+          <td>How many people are in your family?</td>
+          <td>Four: my parents, my sister and me.</td>
+          <td>There are four people in my family. We are very close and we spend weekends together.</td>
+          <td><div class="example-audio"><button class="audio-btn" data-phrase="There are four people in my family. We are very close and we spend weekends together." data-accent="us">🇺🇸</button><button class="audio-btn" data-phrase="There are four people in my family. We are very close and we spend weekends together." data-accent="uk">🇬🇧</button></div></td>
+        </tr>
+        <tr>
+          <td><strong>Hometown</strong></td>
+          <td>Where do you live?</td>
+          <td>I live in a small town.</td>
+          <td>I live in a small town near the coast. It's quiet and the people are friendly.</td>
+          <td><div class="example-audio"><button class="audio-btn" data-phrase="I live in a small town near the coast. It's quiet and the people are friendly." data-accent="us">🇺🇸</button><button class="audio-btn" data-phrase="I live in a small town near the coast. It's quiet and the people are friendly." data-accent="uk">🇬🇧</button></div></td>
+        </tr>
+        <tr>
+          <td><strong>School</strong></td>
+          <td>What is your favourite subject?</td>
+          <td>English. It's interesting.</td>
+          <td>My favourite subject is English because it's useful for my future career.</td>
+          <td><div class="example-audio"><button class="audio-btn" data-phrase="My favourite subject is English because it's useful for my future career." data-accent="us">🇺🇸</button><button class="audio-btn" data-phrase="My favourite subject is English because it's useful for my future career." data-accent="uk">🇬🇧</button></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== PRACTICE ========== -->
+<section class="card speaking-card" id="practice">
+  <h2>🗣️ 4. Speaking Practice</h2>
+  <p>Agora é hora de praticar. Escolha um tópico abaixo, leia a pergunta do examinador e responda em voz alta. Use a estrutura <strong>S+V+O</strong> e tente expandir com uma razão ou exemplo.</p>
+
+  <div class="exercise">
+    <h3>🎯 Escolha um tópico para praticar</h3>
+    <select id="practiceTopic">
+      <option value="daily">Daily Routine — What time do you wake up?</option>
+      <option value="free">Free Time — What do you do in your free time?</option>
+      <option value="food">Food — Do you like cooking?</option>
+      <option value="family">Family — How many people are in your family?</option>
+      <option value="hometown">Hometown — Where do you live?</option>
+      <option value="school">School — What is your favourite subject?</option>
+    </select>
+    <button class="secondary" onclick="showPractice()" style="margin-top:10px">🔍 Show Question & Model</button>
+
+    <div id="practiceOutput" class="speak-feedback" style="display:none">
+      <h4 id="practiceQuestion"></h4>
+      <div id="practiceModel"></div>
+      <div id="practiceFollowup" class="small" style="margin-top:8px"></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px">🎤 Your Turn — Fale por 30–45 segundos</h3>
+  <p>Use as perguntas abaixo como guia. Tente falar sem parar, usando frases completas e conectores.</p>
+  <ol>
+    <li>What time do you wake up? What do you do after that?</li>
+    <li>What do you do in your free time? Why do you enjoy it?</li>
+    <li>Do you like cooking? What is your favourite food?</li>
+    <li>How many people are in your family? Do you spend time together?</li>
+    <li>Where do you live? What do you like about your town?</li>
+    <li>What is your favourite subject? Do you prefer studying alone or with friends?</li>
+  </ol>
+
+  <textarea id="speakingNotes" placeholder="Você pode escrever suas respostas aqui antes de falar..."></textarea>
+  <button onclick="saveSpeaking()">💾 Save My Practice</button>
+  <div id="speakFb" class="feedback"></div>
+</section>
+
+<!-- ========== QUIZ ========== -->
+<section class="card" id="quiz">
+  <h2>🎮 5. Interactive Quiz</h2>
+  <p>10 questões sobre Cambridge Speaking. Escolha a melhor resposta. O feedback aparece imediatamente. <em>As questões são embaralhadas.</em></p>
+
+  <div id="quizContainer"></div>
+
+  <div class="score">
+    <div>YOUR SCORE</div>
+    <strong id="score">0 / 10</strong>
+    <p id="scoreMessage">Complete o quiz para ver seu resultado.</p>
+    <button class="light" onclick="restartQuiz()">🔄 Restart Quiz</button>
+  </div>
+</section>
+
+<!-- ========== CHALLENGE ========== -->
+<section class="card">
+  <h2>🏁 Lesson Challenge</h2>
+  <p>Sem consultar o conteúdo, responda em inglês:</p>
+  <div class="example">
+    <strong>"What do you do in your free time? Do you like cooking? Where do you live? What is your favourite subject?"</strong>
+  </div>
+  <p class="small">Objetivo: produzir respostas completas com <strong>S+V+O</strong>, usando pelo menos uma razão ou exemplo em cada resposta.</p>
+</section>
+
+</main>
+
+<footer>
+  Inglês Profissional • Preparação para Exames • Cambridge • IELTS • TOEFL • Duolingo English Test (DET)<br>
+  <span class="copyright">© English VClass • Edson D'Aguiar</span>
+  • WhatsApp ➡️ <a href="https://wa.me/5541991725009" target="_blank" rel="noopener">Contato</a>
+</footer>
+
+<script>
+/* ---------- AUDIO ---------- */
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.audio-btn');
+  if (!btn) return;
+  e.stopPropagation();
+  const phrase = btn.dataset.phrase;
+  const accent = btn.dataset.accent || 'us';
+  if (!phrase) return;
+
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(phrase);
+  utterance.lang = accent === 'uk' ? 'en-GB' : 'en-US';
+  utterance.rate = 0.85;
+  utterance.pitch = 1.0;
+
+  const voices = window.speechSynthesis.getVoices();
+  if (voices.length > 0) {
+    const found = voices.find(v => v.lang.startsWith(accent === 'uk' ? 'en-GB' : 'en-US'));
+    if (found) utterance.voice = found;
+  }
+
+  btn.classList.add('playing');
+  utterance.onend = () => btn.classList.remove('playing');
+  utterance.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(utterance);
+});
+
+/* ---------- FEEDBACK HELPER ---------- */
+function setFeedback(id, correct, text){
+  const el=document.getElementById(id);
+  el.className='feedback '+(correct?'correct':'wrong');
+  el.textContent=(correct?'🟢 ':'🔴 ')+text;
+}
+
+/* ---------- PROGRESS ---------- */
+const SECTIONS = ['objetivos','structure','topics','feedback','practice','quiz'];
+const sectionState = {};
+SECTIONS.forEach(s => sectionState[s] = false);
+
+function markSectionDone(id){
+  if (sectionState[id]) return;
+  sectionState[id] = true;
+  const link = document.querySelector('nav a[data-section="'+id+'"]');
+  if (link) link.classList.add('done');
+  updateProgress();
+}
+
+function updateProgress(){
+  const done = SECTIONS.filter(s => sectionState[s]).length;
+  const pct = Math.round((done / SECTIONS.length) * 100);
+  document.getElementById('globalProgress').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = pct;
+}
+
+document.querySelectorAll('#practice .exercise button').forEach(btn => {
+  btn.addEventListener('click', () => markSectionDone('practice'));
+});
+document.querySelector('#practice button')?.addEventListener('click', () => markSectionDone('practice'));
+
+/* ---------- PRACTICE TOPIC ---------- */
+const practiceData = {
+  daily: {
+    question: "Examiner: What time do you wake up?",
+    model: "<div class='en'>I usually wake up at seven. After that, I brush my teeth, take a shower, and have breakfast. Then I check my messages and start my day.</div><div class='pt'>Normalmente acordo às sete. Depois disso, escovo os dentes, tomo banho e tomo café da manhã. Então verifico minhas mensagens e começo meu dia.</div>",
+    followup: "Follow-up: What do you usually do after waking up?"
+  },
+  free: {
+    question: "Examiner: What do you do in your free time?",
+    model: "<div class='en'>In my free time, I usually watch movies or series. I like comedies and action films because they help me relax after work.</div><div class='pt'>No meu tempo livre, geralmente assisto filmes ou séries. Gosto de comédias e filmes de ação porque me ajudam a relaxar depois do trabalho.</div>",
+    followup: "Follow-up: What kind of movies do you like?"
+  },
+  food: {
+    question: "Examiner: Do you like cooking?",
+    model: "<div class='en'>Yes, I do. I enjoy cooking at home because it's relaxing. My favourite food is pasta with vegetables. I also like trying new dishes from different countries.</div><div class='pt'>Sim. Gosto de cozinhar em casa porque é relaxante. Minha comida favorita é massa com legumes. Também gosto de experimentar pratos novos de diferentes países.</div>",
+    followup: "Follow-up: What is your favourite food?"
+  },
+  family: {
+    question: "Examiner: How many people are in your family?",
+    model: "<div class='en'>There are four people in my family: my parents, my sister, and me. We spend a lot of time together, especially on weekends. We usually have lunch together and watch films.</div><div class='pt'>Há quatro pessoas na minha família: meus pais, minha irmã e eu. Passamos muito tempo juntos, especialmente nos fins de semana. Normalmente almoçamos juntos e assistimos filmes.</div>",
+    followup: "Follow-up: Do you spend a lot of time with your family?"
+  },
+  hometown: {
+    question: "Examiner: Where do you live?",
+    model: "<div class='en'>I live in a small town near the coast. I like it because it's quiet and the people are friendly. There are also beautiful beaches and good restaurants.</div><div class='pt'>Moro em uma cidade pequena perto do litoral. Gosto porque é tranquila e as pessoas são simpáticas. Também há praias bonitas e bons restaurantes.</div>",
+    followup: "Follow-up: What do you like about your town?"
+  },
+  school: {
+    question: "Examiner: What is your favourite subject?",
+    model: "<div class='en'>My favourite subject is English because it's interesting and useful for my career. I prefer studying with friends because we can practise together and help each other.</div><div class='pt'>Minha matéria favorita é inglês porque é interessante e útil para minha carreira. Prefiro estudar com amigos porque podemos praticar juntos e ajudar uns aos outros.</div>",
+    followup: "Follow-up: Do you prefer studying alone or with friends?"
+  }
+};
+
+function showPractice() {
+  const topic = document.getElementById('practiceTopic').value;
+  const data = practiceData[topic];
+  document.getElementById('practiceOutput').style.display = 'block';
+  document.getElementById('practiceQuestion').textContent = data.question;
+  document.getElementById('practiceModel').innerHTML = data.model;
+  document.getElementById('practiceFollowup').innerHTML = data.followup;
+  markSectionDone('practice');
+}
+
+/* ---------- SPEAKING ---------- */
+function saveSpeaking(){
+  const box=document.getElementById('speakingNotes');
+  const fb=document.getElementById('speakFb');
+  if(box.value.trim().length<10){
+    setFeedback('speakFb',false,'Write a few sentences first, then practice speaking them aloud.');
+  }else{
+    setFeedback('speakFb',true,'Great! Now read your sentences aloud and try to speak without looking.');
+    localStorage.setItem('englishVclassCambridgeSpeaking',box.value);
+  }
+  markSectionDone('practice');
+}
+
+/* ---------- QUIZ (RANDOMIZED) ---------- */
+const baseQuestions=[
+ {q:'Cambridge Speaking Part 1 — Qual é a melhor resposta para "What do you do in your free time?"',a:['I watch movies.','In my free time, I usually watch movies and series. I like comedies because they help me relax.','Movies.','I am watch movies.'],c:1,e:'A resposta B1 expande com exemplo e razão.'},
+ {q:'Qual estrutura é a base para respostas no Cambridge Speaking?',a:['S+V+O (Sujeito + Verbo + Complemento)','Apenas uma palavra','Verbo + Sujeito','Pergunta + Resposta'],c:0,e:'S+V+O é a base, mas você deve expandir com razões e exemplos.'},
+ {q:'"Do you like cooking?" — Qual resposta demonstra mais fluência?',a:['Yes.','Yes, I do.','Yes, I do. I enjoy cooking at home because it helps me relax. I usually make pasta and salads.','No.'],c:2,e:'Resposta completa com razão e exemplos.'},
+ {q:'"How many people are in your family?" — Qual é a resposta A2 adequada?',a:['Four people. My parents, my sister and me.','There are four people in my family: my parents, my sister and me.','Four.','Family four.'],c:1,e:'S+V+O com informação completa.'},
+ {q:'"Where do you live?" — Qual resposta usa expansão B1?',a:['Small town.','I live in a small town.','I live in a small town near the coast. It\'s quiet and the people are friendly.','Town small.'],c:2,e:'Adiciona detalhes e opinião.'},
+ {q:'"What is your favourite subject?" — Qual resposta é mais natural?',a:['English.','My favourite subject is English because it\'s interesting and useful for my career.','I like English.','English interesting.'],c:1,e:'Usa because e expande com razão.'},
+ {q:'O que você deve adicionar para soar mais fluente no Cambridge Speaking?',a:['Palavras difíceis','Razões e exemplos (because, for example)','Frases longas sem sentido','Apenas "yes" ou "no"'],c:1,e:'Razões e exemplos mostram fluência e variedade.'},
+ {q:'Qual é o follow-up comum para "What time do you wake up?"',a:['What do you usually do after waking up?','Do you like sleeping?','What time do you sleep?','Do you have a watch?'],c:0,e:'O examinador costuma perguntar sobre a rotina após acordar.'},
+ {q:'"Do you prefer studying alone or with friends?" — Qual resposta é B1?',a:['Friends.','I prefer studying with friends because we can practise together and help each other.','Alone.','I don\'t know.'],c:1,e:'Resposta com razão e estrutura completa.'},
+ {q:'Qual é a melhor estratégia para o Cambridge Speaking Part 1?',a:['Responder apenas "yes" ou "no"','Falar o máximo possível sem parar','Responder com frases completas e adicionar uma razão ou exemplo','Usar apenas palavras difíceis'],c:2,e:'Frases completas + razão/exemplo = resposta natural e fluente.'}
+];
+
+let questions = [];
+let quizScore=0;
+let answered=0;
+
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function buildQuestions(){
+  questions = shuffle(baseQuestions).map(q => {
+    const pairs = q.a.map((text, idx) => ({text, correct: idx === q.c}));
+    const shuffledPairs = shuffle(pairs);
+    const newOptions = shuffledPairs.map(p => p.text);
+    const newCorrect = shuffledPairs.findIndex(p => p.correct);
+    return { q: q.q, a: newOptions, c: newCorrect, e: q.e };
+  });
+}
+
+function renderQuiz(){
+  buildQuestions();
+  const c=document.getElementById('quizContainer');
+  c.innerHTML='';
+  questions.forEach((item,i)=>{
+    const box=document.createElement('div');
+    box.className='exercise';
+    box.innerHTML='<h3>Question '+(i+1)+'</h3><p><strong>'+item.q+'</strong></p>';
+    item.a.forEach((ans,j)=>{
+      const b=document.createElement('button');
+      b.className='option';
+      b.textContent=String.fromCharCode(65+j)+') '+ans;
+      b.onclick=()=>answerQuiz(i,j,box);
+      box.appendChild(b);
+    });
+    const f=document.createElement('div');
+    f.className='feedback';
+    f.id='qfb'+i;
+    box.appendChild(f);
+    c.appendChild(box);
+  });
+  updateScore();
+}
+
+function answerQuiz(i,j,box){
+  const buttons=box.querySelectorAll('.option');
+  if([...buttons].some(b=>b.disabled)) return;
+  buttons.forEach(b=>b.disabled=true);
+  const correct=j===questions[i].c;
+  buttons[j].classList.add(correct?'correct':'wrong');
+  if(!correct) buttons[questions[i].c].classList.add('correct');
+  if(correct) quizScore++;
+  answered++;
+  const fb=document.getElementById('qfb'+i);
+  fb.className='feedback '+(correct?'correct':'wrong');
+  fb.textContent=(correct?'🟢 Correct! ':'🔴 Not quite. ')+questions[i].e;
+  updateScore();
+  if(answered===10) markSectionDone('quiz');
+}
+
+function updateScore(){
+  document.getElementById('score').textContent=quizScore+' / 10';
+  const msg=document.getElementById('scoreMessage');
+  if(answered===0) msg.textContent='Complete o quiz para ver seu resultado.';
+  else if(answered<10) msg.textContent='Keep going! '+answered+' of 10 answered.';
+  else if(quizScore===10) msg.textContent='🏆 Excellent! Perfect score!';
+  else if(quizScore>=8) msg.textContent='👏 Great job! Review the questions you missed.';
+  else if(quizScore>=6) msg.textContent='👍 Good start! Review the lesson and try again.';
+  else msg.textContent='📚 Keep practicing. Review the lesson and restart the quiz.';
+}
+
+function restartQuiz(){
+  quizScore=0; answered=0; renderQuiz();
+  document.getElementById('quiz').scrollIntoView({behavior:'smooth'});
+}
+
+renderQuiz();
+
+/* ---------- INTERSECTION OBSERVER for sections ---------- */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      if (['objetivos','structure','topics','feedback'].includes(id)) markSectionDone(id);
+    }
+  });
+}, { threshold: 0.35 });
+['objetivos','structure','topics','feedback'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+
+const saved=localStorage.getItem('englishVclassCambridgeSpeaking');
+if(saved) document.getElementById('speakingNotes').value=saved;
+
+updateProgress();
+</script>
+
+</body>
+</html>
